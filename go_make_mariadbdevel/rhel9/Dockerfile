@@ -7,5 +7,3 @@ RUN dnf install go -y && \
     dnf install mariadb-devel -y && \
     dnf clean all && \
     rm -rf /var/cache/yum
-
-CMD ["tail", "-f", "/dev/null"]
