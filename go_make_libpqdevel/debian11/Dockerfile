@@ -1,6 +1,6 @@
-FROM debian:11
+FROM golang:bullseye
 
-RUN apt update && \
-    apt install -y golang automake autoconf make libpq-dev && \
+RUN apt update -y && \
+    apt install -y automake autoconf make libpq-dev && \
     apt clean && \
     rm -rf /var/cache/apt/*

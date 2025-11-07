@@ -1,6 +1,6 @@
-FROM debian:12
+FROM golang:bookworm
 
-RUN apt update && \
-    apt install -y golang automake autoconf make default-libmysqlclient-dev && \
+RUN apt update -y && \
+    apt install -y automake autoconf make default-libmysqlclient-dev && \
     apt clean && \
     rm -rf /var/cache/apt/*

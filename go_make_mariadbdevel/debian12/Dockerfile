@@ -1,6 +1,6 @@
-FROM debian:12
+FROM golang:bookworm
 
-RUN apt update && \
-    apt install -y golang automake autoconf make libmariadb-dev && \
+RUN apt update -y && \
+    apt install -y automake autoconf make libmariadb-dev && \
     apt clean && \
     rm -rf /var/cache/apt/*
