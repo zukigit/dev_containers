@@ -1,6 +1,6 @@
-FROM zukidocker/go_make_gcc:ubuntu24.04
+FROM ubuntu:22.04
 
-RUN apt update && \
-    apt install -y golang automake autoconf make gcc libvterm-dev && \
+RUN apt update -y && \
+    apt install -y automake autoconf make gcc libvterm-dev && \
     apt clean && \
     rm -rf /var/cache/apt/*

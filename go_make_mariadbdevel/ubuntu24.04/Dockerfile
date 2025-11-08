@@ -1,6 +1,6 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 RUN apt update && \
-    apt install -y golang automake autoconf make libmariadb-dev && \
+    apt install -y automake autoconf make libmariadb-dev && \
     apt clean && \
     rm -rf /var/cache/apt/*
