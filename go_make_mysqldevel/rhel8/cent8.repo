@@ -1,0 +1,5 @@
+[cent8AppStream] 
+name=CentOS App Stream 8
+baseurl=https://vault.centos.org/8-stream/AppStream/x86_64/os/
+enabled=1 
+gpgcheck=0 
