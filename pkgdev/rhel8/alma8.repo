@@ -1,0 +1,5 @@
+[alma8AppStream] 
+name=Alma8 App Stream
+baseurl=https://repo.almalinux.org/almalinux/8/AppStream/x86_64/os
+enabled=1 
+gpgcheck=0 
