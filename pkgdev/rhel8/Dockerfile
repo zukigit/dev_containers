@@ -5,4 +5,5 @@ COPY alma8.repo /etc/yum.repos.d/
 RUN dnf install automake autoconf make rpmdevtools rpmlint -y && \
     dnf clean all && \
     rm -rf /var/cache/yum && \
-    rm -rf /tmp/*.rpm
+    rm -rf /tmp/*.rpm && \
+    rpmdev-setuptree
