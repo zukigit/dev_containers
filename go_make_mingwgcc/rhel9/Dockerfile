@@ -1,4 +1,4 @@
-FROM  zukidocker/go_make:rhel9
+FROM  redhat/ubi9:latest
 
 COPY cent9.repo /etc/yum.repos.d/
 
