@@ -1,4 +1,4 @@
-FROM  zukidocker/pkgdev:rhel9
+FROM  redhat/ubi9:latest
 
 RUN dnf install automake autoconf make rpmdevtools rpmlint -y && \
     dnf clean all && \
