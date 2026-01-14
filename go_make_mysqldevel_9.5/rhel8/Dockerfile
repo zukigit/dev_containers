@@ -1,10 +1,8 @@
-FROM  redhat/ubi8:latest
+FROM  zukidocker/go_make_gcc:rhel8
 
 COPY mysql-community-* /tmp
 
-RUN dnf install go -y && \
-    dnf install automake autoconf make -y && \
-    rpm -ivh /tmp/mysql-community-common-9.5.0-1.el8.x86_64.rpm && \
+RUN rpm -ivh /tmp/mysql-community-common-9.5.0-1.el8.x86_64.rpm && \
     rpm -ivh /tmp/mysql-community-client-plugins-9.5.0-1.el8.x86_64.rpm && \
     rpm -ivh /tmp/mysql-community-libs-9.5.0-1.el8.x86_64.rpm && \
     rpm -ivh /tmp/mysql-community-devel-9.5.0-1.el8.x86_64.rpm && \
