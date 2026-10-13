@@ -1,11 +1,13 @@
-FROM docker.io/zukidocker/ubi10:git
+FROM docker.io/redhat/ubi10:latest
 
-RUN dnf install -y \
-        cargo \
-        shadow-utils \
-    && dnf clean all \
-    && rm -rf /var/cache/yum
+# Build prerequisites
+RUN dnf install -y gcc make git \
+    && dnf clean all
 
-RUN useradd -m -u 1000 -s /bin/bash zuki \
-    && mkdir -p /.zed_server \
-    && chown zuki:zuki /.zed_server
+# Install rustup + latest stable toolchain (includes cargo)
+ENV RUSTUP_HOME=/usr/local/rustup \
+    CARGO_HOME=/usr/local/cargo \
+    PATH=/usr/local/cargo/bin:$PATH
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
+    | sh -s -- -y --profile minimal --default-toolchain stable
